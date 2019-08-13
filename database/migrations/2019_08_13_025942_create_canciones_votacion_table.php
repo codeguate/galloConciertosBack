@@ -29,6 +29,9 @@ class CreateCancionesVotacionTable extends Migration
             $table->integer('cancion')->nullable()->default(null)->unsigned();
             $table->foreign('cancion')->references('id')->on('canciones')->onDelete('cascade');
 
+            $table->integer('usuario')->nullable()->default(null)->unsigned();
+            $table->foreign('usuario')->references('id')->on('users')->onDelete('cascade');
+
             $table->timestamps();
         });
     }

@@ -15,4 +15,8 @@ class CancionesVotacion extends Model
     public function canciones(){
         return $this->hasOne('App\Canciones','id','cancion');
     }
+
+    public function usuarios(){
+        return $this->hasOne('App\Users','id','usuario');
+    }
 }

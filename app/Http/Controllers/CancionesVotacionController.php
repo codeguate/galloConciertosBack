@@ -24,21 +24,21 @@ class CancionesVotacionController extends Controller
         if($request->get('filter')){
             switch ($request->get('filter')) {
                 case 'banda':{
-                    $objectSee = CancionesVotacion::whereRaw('banda=?',[$id])->with('bandas','canciones')->get();
+                    $objectSee = CancionesVotacion::whereRaw('banda=?',[$id])->with('bandas','canciones','usuarios')->get();
                     break;
                 }
                 case 'cancion':{
-                    $objectSee = CancionesVotacion::whereRaw('cancion=?',[$id])->with('bandas','canciones')->get();
+                    $objectSee = CancionesVotacion::whereRaw('cancion=?',[$id])->with('bandas','canciones','usuarios')->get();
                     break;
                 }
                 default:{
-                    $objectSee = CancionesVotacion::whereRaw('banda=? and state=?',[$id,$state])->with('bandas','canciones')->get();
+                    $objectSee = CancionesVotacion::whereRaw('banda=? and state=?',[$id,$state])->with('bandas','canciones','usuarios')->get();
                     break;
                 }
     
             }
         }else{
-            $objectSee = CancionesVotacion::whereRaw('banda=? and state=?',[$id,$state])->with('bandas','canciones')->get();
+            $objectSee = CancionesVotacion::whereRaw('banda=? and state=?',[$id,$state])->with('bandas','canciones','usuarios')->get();
         }
     
         if ($objectSee) {
