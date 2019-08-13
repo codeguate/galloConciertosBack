@@ -12,57 +12,32 @@ use Illuminate\Http\Request;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-Route::resource('users', 'UsersController');
-Route::resource('encuestas', 'EncuestasController');
-Route::resource('encuestasimgs', 'EncuestasImgsController');
-Route::resource('edecanes', 'EdecanesController');
-Route::resource('comentariosencuestas', 'ComentariosEncuestasController');
-Route::resource('roles', 'RolesController');
 Route::resource('anuncios', 'AnunciosController');
-Route::resource('anunciosdescuentos', 'AnunciosDescuentosController');
-Route::resource('categoriaeventos', 'CategoriaEventosController');
+Route::resource('bandas', 'BandasController');
+Route::resource('bandaseventos', 'BandasEventosController');
+Route::resource('canciones', 'CancionesController');
+Route::resource('cancionesvotacion', 'CancionesVotacionController');
 Route::resource('eventos', 'EventosController');
-Route::resource('eventosdescuentoarea', 'EventosDescuentoAreaController');
-Route::resource('eventosdescuento', 'EventosDescuentoController');
-Route::resource('eventosdescuentovendedor', 'EventosDescuentoVendedorController');
-Route::resource('eventosfuncionesarea', 'EventosFuncionesAreaController');
-Route::resource('eventosfuncionesarealugar', 'EventosFuncionesAreaLugarController');
-Route::resource('eventosfunciones', 'EventosFuncionesController');
 Route::resource('eventosimgs', 'EventosImgsController');
-Route::resource('eventosvendedor', 'EventosVendedorController');
-Route::resource('eventosvendedormensajeria', 'EventosVendedorMensajeriaController');
-Route::resource('eventosventa', 'EventosVentaController');
+Route::resource('eventosvotacion', 'EventosVotacionController');
+Route::resource('roles', 'RolesController');
+Route::resource('users', 'UsersController');
 
-Route::get('filter/{id}/edecanes/{state}', "EdecanesController@getThisByFilter");
-Route::get('filter/{id}/encuestas/{state}', "EncuestasController@getThisByFilter");
-Route::get('filter/{id}/encuestasimgs/{state}', "EncuestasImgsController@getThisByFilter");
-Route::get('filter/{id}/comentariosencuestas/{state}', "ComentariosEncuestasController@getThisByFilter");
 Route::get('filter/{id}/anuncios/{state}', "AnunciosController@getThisByFilter");
-Route::get('filter/{id}/anunciosdescuentos/{state}', "AnunciosDescuentosController@getThisByFilter");
-Route::get('filter/{id}/categoriaeventos/{state}', "CategoriaEventosController@getThisByFilter");
+Route::get('filter/{id}/bandas/{state}', "BandasController@getThisByFilter");
+Route::get('filter/{id}/bandaseventos/{state}', "BandasEventosController@getThisByFilter");
+Route::get('filter/{id}/canciones/{state}', "CancionesController@getThisByFilter");
+Route::get('filter/{id}/cancionesvotacion/{state}', "CancionesVotacionController@getThisByFilter");
 Route::get('filter/{id}/eventos/{state}', "EventosController@getThisByFilter");
-Route::get('filter/{id}/eventosdescuentoarea/{state}', "EventosDescuentoAreaController@getThisByFilter");
-Route::get('filter/{id}/eventosdescuento/{state}', "EventosDescuentoController@getThisByFilter");
-Route::get('filter/{id}/eventosdescuentovendedor/{state}', "EventosDescuentoVendedorController@getThisByFilter");
-Route::get('filter/{id}/eventosfuncionesarea/{state}', "EventosFuncionesAreaController@getThisByFilter");
-Route::get('filter/{id}/eventosfuncionesarealugar/{state}', "EventosFuncionesAreaLugarController@getThisByFilter");
-Route::get('filter/{id}/eventosfunciones/{state}', "EventosFuncionesController@getThisByFilter");
 Route::get('filter/{id}/eventosimgs/{state}', "EventosImgsController@getThisByFilter");
-Route::get('filter/{id}/eventosvendedor/{state}', "EventosVendedorController@getThisByFilter");
-Route::get('filter/{id}/eventosvendedormensajeria/{state}', "EventosVendedorMensajeriaController@getThisByFilter");
-Route::get('filter/{id}/eventosventa/{state}', "EventosVentaController@getThisByFilter");
+Route::get('filter/{id}/eventosvotacion/{state}', "EventosVotacionController@getThisByFilter");
+Route::get('filter/{id}/users/{state}', "UsersController@getThisByFilter");
 
 Route::get('rol/{id}/users', "Users@getUsersByRol");
 
 Route::post('users/password/reset', 'UsersController@recoveryPassword');
 Route::post('users/{id}/changepassword', "UsersController@changePassword");
 
-Route::put('vender/{id}', 'EventosFuncionesAreaController@Vender');
-
-
-Route::post('enviar', 'EventosVentaController@enviar');
-Route::post('pagar', 'EventosVentaController@pagar');
-Route::post('comprobante', 'EventosVentaController@comprobanteCompra');
 Route::post('login', 'AuthenticateController@login');
 Route::post('upload', 'AuthenticateController@uploadAvatar');
 
