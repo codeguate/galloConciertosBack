@@ -24,29 +24,29 @@ class EventosController extends Controller
         if($request->get('filter')){
             switch ($request->get('filter')) {
                 case 'state':{
-                    $objectSee = Eventos::whereRaw('state=?',[$state])->with('usuarios','categorias','tipos')->get();
+                    $objectSee = Eventos::whereRaw('state=?',[$state])->with('usuarios','bandas','tipos')->get();
                     break;
                 }
                 case 'usuario':{
-                    $objectSee = Eventos::whereRaw('usuario=?',[$state])->with('usuarios','categorias','tipos','funciones')->get();
+                    $objectSee = Eventos::whereRaw('usuario=?',[$state])->with('usuarios','bandas','tipos')->get();
                     break;
                 }
-                case 'categoria':{
-                    $objectSee = Eventos::whereRaw('categoria=?',[$state])->with('usuarios','categorias','tipos')->get();
+                case 'banda':{
+                    $objectSee = Eventos::whereRaw('banda=?',[$state])->with('usuarios','bandas','tipos')->get();
                     break;
                 }
                 case 'tipo':{
-                    $objectSee = Eventos::whereRaw('tipo=?',[$state])->with('usuarios','categorias','tipos')->get();
+                    $objectSee = Eventos::whereRaw('tipo=?',[$state])->with('usuarios','bandas','tipos')->get();
                     break;
                 }
                 default:{
-                    $objectSee = Eventos::whereRaw('state=?',[$state])->with('usuarios','categorias','tipos')->get();
+                    $objectSee = Eventos::whereRaw('state=?',[$state])->with('usuarios','bandas','tipos')->get();
                     break;
                 }
     
             }
         }else{
-            $objectSee = Eventos::with('usuarios','categorias','tipos')->get();
+            $objectSee = Eventos::with('usuarios','bandas','tipos')->get();
         }
     
         if ($objectSee) {
@@ -100,7 +100,7 @@ class EventosController extends Controller
                 $newObject->type            = $request->get('type');
                 $newObject->state            = $request->get('state');
                 $newObject->usuario            = $request->get('usuario');
-                $newObject->categoria            = $request->get('categoria');
+                $newObject->banda            = $request->get('banda');
                 $newObject->tipo            = $request->get('tipo');
                 $newObject->save();
                 return Response::json($newObject, 200);
@@ -165,7 +165,7 @@ class EventosController extends Controller
                 $objectUpdate->type = $request->get('type', $objectUpdate->type);
                 $objectUpdate->state = $request->get('state', $objectUpdate->state);
                 $objectUpdate->usuario = $request->get('usuario', $objectUpdate->usuario);
-                $objectUpdate->categoria = $request->get('categoria', $objectUpdate->categoria);
+                $objectUpdate->banda = $request->get('banda', $objectUpdate->banda);
                 $objectUpdate->tipo = $request->get('tipo', $objectUpdate->tipo);
     
                 $objectUpdate->save();

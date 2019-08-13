@@ -12,10 +12,6 @@ class Eventos extends Model
         return $this->hasOne('App\Users','id','usuario');
     }
 
-    public function categorias(){
-        return $this->hasOne('App\CategoriaEventos','id','categoria');
-    }
-
     public function tipos(){
         return $this->hasOne('App\TipoEventos','id','tipo');
     }
@@ -24,7 +20,7 @@ class Eventos extends Model
         return $this->hasMany('App\EventosImgs','evento','id');
     }
 
-    public function funciones(){
-        return $this->hasMany('App\EventosFunciones','evento','id')->orderby('inicio','desc');
+    public function bandas(){
+        return $this->hasMany('App\BandasEventos','evento','id')->with('canciones');
     }
 }
