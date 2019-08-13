@@ -57,7 +57,7 @@ class EventosSeeder extends Seeder
             'descripcion'         => "",
             'foto1'          => "http://quehacemosenguate.com/wp-content/uploads/2016/07/20160723RV22.png",
             'foto2'       => "",
-            'logo'       => "https://i.scdn.co/image/7dbac8a1dd3d4f93de0b2a6c3671ad530a454d2e",
+            'logo'       => "http://documentos.devcodegt.com/gallo/viento-contra.png",
             'state'             => 1,
             'created_at'        => date('Y-m-d H:m:s'),
             'updated_at'        => date('Y-m-d H:m:s')
@@ -70,7 +70,7 @@ class EventosSeeder extends Seeder
             'descripcion'         => "",
             'foto1'          => "https://i.ytimg.com/vi/4NCijQ1Y17c/hqdefault.jpg",
             'foto2'       => "",
-            'logo'       => "https://i.ytimg.com/vi/DH2mBW5f__Q/hqdefault.jpg?custom=true&w=168&h=94&stc=true&jpg444=true&jpgq=90&sp=68&sigh=kAtzdX1t6dgVhh9x8twoiDEwKOQ",
+            'logo'       => "http://documentos.devcodegt.com/gallo/viernes-verde.png",
             'state'             => 1,
             'created_at'        => date('Y-m-d H:m:s'),
             'updated_at'        => date('Y-m-d H:m:s')
@@ -94,9 +94,9 @@ class EventosSeeder extends Seeder
             'valor'          => 10,
             'comentario'             => "",
             'descripcion'         => "",
-            'foto1'          => "https://www.guatemala.com/fotos/201510/el-clubo-875x500.jpg",
+            'foto1'          => "http://documentos.devcodegt.com/gallo/imagen-artista.png",
             'foto2'       => "",
-            'logo'       => "https://elguatemalteco.files.wordpress.com/2015/10/12096371_10153620926857192_1523852530067124219_n.png?w=816&h=9999",
+            'logo'       => "http://documentos.devcodegt.com/gallo/el-clubo.png",
             'state'             => 1,
             'created_at'        => date('Y-m-d H:m:s'),
             'updated_at'        => date('Y-m-d H:m:s')
