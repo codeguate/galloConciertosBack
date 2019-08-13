@@ -23,59 +23,25 @@ class BandasEventosController extends Controller
     {
         if($request->get('filter')){
             switch ($request->get('filter')) {
-                case 'state':{
-                    $objectSee = BandasEventos::whereRaw('user=? and state=?',[$id,$state])->with('user')->get();
+                case 'banda':{
+                    $objectSee = BandasEventos::whereRaw('banda=?',[$id])->with('bandas','eventos','votaciones')->get();
                     break;
                 }
-                case 'type':{
-                    $objectSee = BandasEventos::whereRaw('user=? and tipo=?',[$id,$state])->with('user')->get();
+                case 'evento':{
+                    $objectSee = BandasEventos::whereRaw('evento=?',[$id])->with('bandas','eventos','votaciones')->get();
                     break;
                 }
                 default:{
-                    $objectSee = BandasEventos::whereRaw('user=? and state=?',[$id,$state])->with('user')->get();
+                    $objectSee = BandasEventos::whereRaw('user=? and state=?',[$id,$state])->with('bandas','eventos','votaciones')->get();
                     break;
                 }
     
             }
         }else{
-            $objectSee = BandasEventos::whereRaw('user=? and state=?',[$id,$state])->with('user')->get();
+            $objectSee = BandasEventos::whereRaw('user=? and state=?',[$id,$state])->with('bandas','eventos','votaciones')->get();
         }
     
         if ($objectSee) {
-            return Response::json($objectSee, 200);
-    
-        }
-        else {
-            $returnData = array (
-                'status' => 404,
-                'message' => 'No record found'
-            );
-            return Response::json($returnData, 404);
-        }
-    }
-    
-    public function getThisByUser($id)
-    {
-        $objectSee = BandasEventos::where('app','=',$id)->with('users')->get();
-        if ($objectSee) {
-    
-            return Response::json($objectSee, 200);
-    
-        }
-        else {
-            $returnData = array (
-                'status' => 404,
-                'message' => 'No record found'
-            );
-            return Response::json($returnData, 404);
-        }
-    }
-    
-    public function getThisByClient($id)
-    {
-        $objectSee = BandasEventos::where('app','=',$id)->with('users')->get();
-        if ($objectSee) {
-    
             return Response::json($objectSee, 200);
     
         }
@@ -107,8 +73,8 @@ class BandasEventosController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            ''          => 'required',
-            ''          => 'required',
+            'evento'          => 'required',
+            'banda'          => 'required',
         ]);
         if ( $validator->fails() ) {
             $returnData = array (
@@ -121,7 +87,18 @@ class BandasEventosController extends Controller
         else {
             try {
                 $newObject = new BandasEventos();
-                $newObject->column            = $request->get('get');
+                $newObject->nombre            = $request->get('nombre');
+                $newObject->valor            = $request->get('valor');
+                $newObject->comentario            = $request->get('comentario');
+                $newObject->descripcion            = $request->get('descripcion');
+                $newObject->youtube            = $request->get('youtube');
+                $newObject->twitter            = $request->get('twitter');
+                $newObject->web            = $request->get('web');
+                $newObject->spotyfy            = $request->get('spotyfy');
+                $newObject->type            = $request->get('type');
+                $newObject->state            = $request->get('state');
+                $newObject->banda            = $request->get('banda');
+                $newObject->evento            = $request->get('evento');
                 $newObject->save();
                 return Response::json($newObject, 200);
     
@@ -135,41 +112,6 @@ class BandasEventosController extends Controller
         }
     }
     
-    public function uploadAvatar(Request $request, $id)
-    {
-        $validator = Validator::make($request->all(), [
-            'avatar'      => 'required|image|mimes:jpeg,png,jpg'
-        ]);
-    
-        if ($validator->fails()) {
-            $returnData = array(
-                'status' => 400,
-                'message' => 'Invalid Parameters',
-                'validator' => $validator->messages()->toJson()
-            );
-            return Response::json($returnData, 400);
-        }
-        else {
-            try {
-    
-                $path = Storage::disk('s3')->put($request->carpeta, $request->avatar);
-    
-                $objectUpdate->picture = Storage::disk('s3')->url($path);
-                $objectUpdate->save();
-    
-                return Response::json($objectUpdate, 200);
-    
-            }
-            catch (Exception $e) {
-                $returnData = array(
-                    'status' => 500,
-                    'message' => $e->getMessage()
-                );
-            }
-    
-        }
-    }
-    
     /**
     * Display the specified resource.
     *
@@ -180,7 +122,9 @@ class BandasEventosController extends Controller
     {
         $objectSee = BandasEventos::find($id);
         if ($objectSee) {
-            $objectSee->column;
+            $objectSee->bandas;
+            $objectSee->eventos;
+            $objectSee->votaciones;
             return Response::json($objectSee, 200);
     
         }
@@ -216,10 +160,23 @@ class BandasEventosController extends Controller
         $objectUpdate = BandasEventos::find($id);
         if ($objectUpdate) {
             try {
-                $objectUpdate->column = $request->get('get', $objectUpdate->column);
+                $objectUpdate->nombre = $request->get('nombre', $objectUpdate->nombre);
+                $objectUpdate->valor = $request->get('valor', $objectUpdate->valor);
+                $objectUpdate->comentario = $request->get('comentario', $objectUpdate->comentario);
+                $objectUpdate->descripcion = $request->get('descripcion', $objectUpdate->descripcion);
+                $objectUpdate->youtube = $request->get('youtube', $objectUpdate->youtube);
+                $objectUpdate->twitter = $request->get('twitter', $objectUpdate->twitter);
+                $objectUpdate->web = $request->get('web', $objectUpdate->web);
+                $objectUpdate->spotyfy = $request->get('spotyfy', $objectUpdate->spotyfy);
+                $objectUpdate->type = $request->get('type', $objectUpdate->type);
+                $objectUpdate->state = $request->get('state', $objectUpdate->state);
+                $objectUpdate->banda = $request->get('banda', $objectUpdate->banda);
+                $objectUpdate->evento = $request->get('evento', $objectUpdate->evento);
     
                 $objectUpdate->save();
-    $objectUpdate->function;
+                $objectUpdate->bandas;
+                $objectUpdate->eventos;
+                $objectUpdate->votaciones;
                 return Response::json($objectUpdate, 200);
             } catch (Exception $e) {
                 $returnData = array (
