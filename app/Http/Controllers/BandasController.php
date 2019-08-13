@@ -23,59 +23,29 @@ class BandasController extends Controller
     {
         if($request->get('filter')){
             switch ($request->get('filter')) {
-                case 'state':{
-                    $objectSee = Bandas::whereRaw('user=? and state=?',[$id,$state])->with('user')->get();
+                case 'nombre':{
+                    $objectSee = Bandas::whereRaw('nombre like "%?%"',[$id])->with('usuarios','canciones')->get();
                     break;
                 }
-                case 'type':{
-                    $objectSee = Bandas::whereRaw('user=? and tipo=?',[$id,$state])->with('user')->get();
+                case 'descripcion':{
+                    $objectSee = Bandas::whereRaw('descripcion like "%?%"',[$id])->with('usuarios','canciones')->get();
+                    break;
+                }
+                case 'usuario':{
+                    $objectSee = Bandas::whereRaw('usuario=?',[$id])->with('usuarios','canciones')->get();
                     break;
                 }
                 default:{
-                    $objectSee = Bandas::whereRaw('user=? and state=?',[$id,$state])->with('user')->get();
+                    $objectSee = Bandas::whereRaw('usuario=? and state=?',[$id,$state])->with('usuarios','canciones')->get();
                     break;
                 }
     
             }
         }else{
-            $objectSee = Bandas::whereRaw('user=? and state=?',[$id,$state])->with('user')->get();
+            $objectSee = Bandas::whereRaw('usuario=? and state=?',[$id,$state])->with('usuarios','canciones')->get();
         }
     
         if ($objectSee) {
-            return Response::json($objectSee, 200);
-    
-        }
-        else {
-            $returnData = array (
-                'status' => 404,
-                'message' => 'No record found'
-            );
-            return Response::json($returnData, 404);
-        }
-    }
-    
-    public function getThisByUser($id)
-    {
-        $objectSee = Bandas::where('app','=',$id)->with('users')->get();
-        if ($objectSee) {
-    
-            return Response::json($objectSee, 200);
-    
-        }
-        else {
-            $returnData = array (
-                'status' => 404,
-                'message' => 'No record found'
-            );
-            return Response::json($returnData, 404);
-        }
-    }
-    
-    public function getThisByClient($id)
-    {
-        $objectSee = Bandas::where('app','=',$id)->with('users')->get();
-        if ($objectSee) {
-    
             return Response::json($objectSee, 200);
     
         }
@@ -107,8 +77,7 @@ class BandasController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            ''          => 'required',
-            ''          => 'required',
+            'nombre'          => 'required',
         ]);
         if ( $validator->fails() ) {
             $returnData = array (
@@ -121,7 +90,16 @@ class BandasController extends Controller
         else {
             try {
                 $newObject = new Bandas();
-                $newObject->column            = $request->get('get');
+                $newObject->nombre            = $request->get('nombre');
+                $newObject->valor            = $request->get('valor');
+                $newObject->comentario            = $request->get('comentario');
+                $newObject->descripcion            = $request->get('descripcion');
+                $newObject->foto1            = $request->get('foto1');
+                $newObject->foto2            = $request->get('foto2');
+                $newObject->logo            = $request->get('logo');
+                $newObject->type            = $request->get('type');
+                $newObject->state            = $request->get('state');
+                $newObject->usuario            = $request->get('usuario');
                 $newObject->save();
                 return Response::json($newObject, 200);
     
@@ -135,41 +113,6 @@ class BandasController extends Controller
         }
     }
     
-    public function uploadAvatar(Request $request, $id)
-    {
-        $validator = Validator::make($request->all(), [
-            'avatar'      => 'required|image|mimes:jpeg,png,jpg'
-        ]);
-    
-        if ($validator->fails()) {
-            $returnData = array(
-                'status' => 400,
-                'message' => 'Invalid Parameters',
-                'validator' => $validator->messages()->toJson()
-            );
-            return Response::json($returnData, 400);
-        }
-        else {
-            try {
-    
-                $path = Storage::disk('s3')->put($request->carpeta, $request->avatar);
-    
-                $objectUpdate->picture = Storage::disk('s3')->url($path);
-                $objectUpdate->save();
-    
-                return Response::json($objectUpdate, 200);
-    
-            }
-            catch (Exception $e) {
-                $returnData = array(
-                    'status' => 500,
-                    'message' => $e->getMessage()
-                );
-            }
-    
-        }
-    }
-    
     /**
     * Display the specified resource.
     *
@@ -180,7 +123,8 @@ class BandasController extends Controller
     {
         $objectSee = Bandas::find($id);
         if ($objectSee) {
-            $objectSee->column;
+            $objectSee->usuarios;
+            $objectSee->canciones;
             return Response::json($objectSee, 200);
     
         }
@@ -216,10 +160,21 @@ class BandasController extends Controller
         $objectUpdate = Bandas::find($id);
         if ($objectUpdate) {
             try {
-                $objectUpdate->column = $request->get('get', $objectUpdate->column);
+                $objectUpdate->nombre = $request->get('nombre', $objectUpdate->nombre);
+                $objectUpdate->valor = $request->get('valor', $objectUpdate->valor);
+                $objectUpdate->fecha = $request->get('fecha', $objectUpdate->fecha);
+                $objectUpdate->comentario = $request->get('comentario', $objectUpdate->comentario);
+                $objectUpdate->descripcion = $request->get('descripcion', $objectUpdate->descripcion);
+                $objectUpdate->foto1 = $request->get('foto1', $objectUpdate->foto1);
+                $objectUpdate->foto2 = $request->get('foto2', $objectUpdate->foto2);
+                $objectUpdate->logo = $request->get('logo', $objectUpdate->logo);
+                $objectUpdate->type = $request->get('type', $objectUpdate->type);
+                $objectUpdate->state = $request->get('state', $objectUpdate->state);
+                $objectUpdate->usuario = $request->get('usuario', $objectUpdate->usuario);
     
                 $objectUpdate->save();
-    $objectUpdate->function;
+                $objectUpdate->usuarios;
+                $objectUpdate->canciones;
                 return Response::json($objectUpdate, 200);
             } catch (Exception $e) {
                 $returnData = array (
