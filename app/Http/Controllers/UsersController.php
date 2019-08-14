@@ -54,7 +54,7 @@ class UsersController extends Controller
          $validator = Validator::make($request->all(), [
              'password'      => 'required|min:3',
              'email'         => 'required|email',
-             'telefono'         => 'required'
+             'nombres'         => 'required'
          ]);
          
  
@@ -71,9 +71,7 @@ class UsersController extends Controller
              $email_exists  = Users::whereRaw("email = ?", $email)->count();
              $user = $request->get('username');
              $user_exists  = Users::whereRaw("username = ?", $user)->count();
-             $telefono = $request->get('telefono');
-             $telefono_exists  = Users::whereRaw("telefono = ?", $telefono)->count();
-             if($email_exists == 0 && $user_exists == 0 && $telefono_exists == 0){    
+             if($email_exists == 0 && $user_exists == 0){    
                      $newObject = new Users();
                      $newObject->username = $request->get('username');
                      $newObject->password = Hash::make($request->get('password'));
@@ -84,7 +82,7 @@ class UsersController extends Controller
                      $newObject->nacimiento = $request->get('nacimiento');
                      $newObject->codigo = $request->get('codigo');
                      $newObject->descripcion = $request->get('descripcion', '');
-                     $newObject->telefono = $telefono;
+                     $newObject->telefono = null;
                      $newObject->dpi = $request->get('dpi', '');
                      $newObject->state = $request->get('state',1);
                      $newObject->save();
