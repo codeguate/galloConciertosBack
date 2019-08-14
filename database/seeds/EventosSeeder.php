@@ -81,7 +81,7 @@ class EventosSeeder extends Seeder
             'valor'          => 10,
             'comentario'             => "",
             'descripcion'         => "5fwK7ENG6aLoNLdYskJLzQ",
-            'foto1'          => "http://documentos.devcodegt.com/gallo/artistas/elclubo.png",
+            'foto1'          => "http://documentos.devcodegt.com/gallo/artistas/el-tambor-de-la-tribu.png",
             'foto2'       => "",
             'logo'       => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCoLAwSFj1NSsq75nZimMs0ii09EytbMn5oCwU3oJwt9FMseuD",
             'state'             => 1,
