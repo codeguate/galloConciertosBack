@@ -57,7 +57,7 @@ class EventosSeeder extends Seeder
             'descripcion'         => "37ATQx0FHilwEs303kbplC",
             'foto1'          => "http://documentos.devcodegt.com/gallo/artistas/viernes-verde.png",
             'foto2'       => "",
-            'logo'       => "",
+            'logo'       => "http://documentos.devcodegt.com/gallo/viernes-verde.png",
             'state'             => 1,
             'created_at'        => date('Y-m-d H:m:s'),
             'updated_at'        => date('Y-m-d H:m:s')
