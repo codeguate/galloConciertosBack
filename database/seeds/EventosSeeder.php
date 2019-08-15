@@ -208,7 +208,7 @@ class EventosSeeder extends Seeder
             'twitter'         => "",
             'web'         => "https://www.facebook.com/elTambordelaTribu/",
             'spotyfy'         => "https://open.spotify.com/artist/5fwK7ENG6aLoNLdYskJLzQ",
-            'banda'             => 4,
+            'banda'             => 5,
             'evento'             => 1,
             'type'             => 1,
             'state'             => 1,
