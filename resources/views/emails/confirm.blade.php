@@ -7,7 +7,7 @@
         <img src="http://test.codeguate.com/gallo/logo.png" style="height: 30vh;width: auto;margin-top: 25px;">
         <h2 style="font-size: 4vh;">Nombre: <span id="name-email"> {{ $username }} </span></h2>
         <h3 style="font-size: 4vh;">Contrase&ntilde;a: <span id="password-email"> ********* </span></h3>
-        <p style="text-align:center;width:100%;font-size: 2vh;">
+        <p style="text-align:center;width:100%;font-size: 2vh;color:#ffffff;">
           Ahora puedes votar por las canciones que deseas que suenen en el concierto de independencia GALLO.
         </p>
       </div>

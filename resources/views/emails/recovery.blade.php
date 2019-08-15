@@ -7,7 +7,7 @@
         <img src="http://test.codeguate.com/gallo/logo.png" style="height: 30vh;width: auto;margin-top: 25px;">
         <h2 style="font-size: 4vh;">Nombre: <span id="name-email"> {{ $username }} </span></h2>
         <h3 style="font-size: 4vh;">Contrase&ntilde;a: <span id="password-email"> {{ $password }} </span></h3>
-        <p style="text-align:center;width:100%;font-size: 2vh;">
+        <p style="text-align:center;width:100%;font-size: 2vh;color:#ffffff;">
           *Esta contraseña fue generada automaticamente luego de haber olvidado la contraseña ingresada, si necesita generar una nueva contraseña puede hacerlo en la opcion <a href="http://independenciagallo.devcodegt.com/" target="_blank">¿Olvidaste tu contraseña?</a> 
         </p>
       </div>
