@@ -90,10 +90,10 @@ class UsersController extends Controller
                      $objectSee = Users::whereRaw('id=?',$newObject->id)->with('roles')->first();
                      if ($objectSee) {
                         Mail::send('emails.confirm', ['empresa' => 'Jose Daniel Rodriguez', 'url' => 'https://www.JoseDanielRodriguez.com', 'app' => 'http://me.JoseDanielRodriguez.gt', 'password' => $request->get('password'), 'username' => $objectSee->username, 'codigo' => $objectSee->codigo, 'email' => $objectSee->email, 'name' => $objectSee->nombres.' '.$objectSee->apellidos,], function (Message $message) use ($objectSee){
-                            $message->from('jdanielr61@gmail.com', 'Info Jose Daniel Rodriguez')
-                                    ->sender('jdanielr61@gmail.com', 'Info Jose Daniel Rodriguez')
+                            $message->from('noreplay@gallo.com.gt', 'Festival de Independencia Gallo')
+                                    ->sender('noreplay@gallo.com.gt', 'Festival de Independencia Gallo')
                                     ->to($objectSee->email, $objectSee->nombres.' '.$objectSee->apellidos)
-                                    ->replyTo('jdanielr61@gmail.com', 'Info Jose Daniel Rodriguez')
+                                    ->replyTo('noreplay@gallo.com.gt', 'Festival de Independencia Gallo')
                                     ->subject('Usuario Creado Exitosamente');
                         
                         });
@@ -128,10 +128,10 @@ class UsersController extends Controller
                     $objectSee = Users::whereRaw('id=?',$request->get('id'))->with('roles')->first();
                      if ($objectSee) {
                         Mail::send('emails.confirm', ['empresa' => 'Jose Daniel Rodriguez', 'url' => 'https://www.JoseDanielRodriguez.com', 'app' => 'http://me.JoseDanielRodriguez.gt', 'username' => $objectSee->username, 'codigo' => $objectSee->codigo, 'email' => $objectSee->email, 'name' => $objectSee->nombres.' '.$objectSee->apellidos,], function (Message $message) use ($objectSee){
-                            $message->from('jdanielr61@gmail.com', 'Info Jose Daniel Rodriguez')
-                                    ->sender('jdanielr61@gmail.com', 'Info Jose Daniel Rodriguez')
+                            $message->from('noreplay@gallo.com.gt', 'Festival de Independencia Gallo')
+                                    ->sender('noreplay@gallo.com.gt', 'Festival de Independencia Gallo')
                                     ->to($objectSee->email, $objectSee->nombres.' '.$objectSee->apellidos)
-                                    ->replyTo('jdanielr61@gmail.com', 'Info Jose Daniel Rodriguez')
+                                    ->replyTo('noreplay@gallo.com.gt', 'Festival de Independencia Gallo')
                                     ->subject('Usuario Creado Exitosamente');
                         
                         });
@@ -246,10 +246,10 @@ class UsersController extends Controller
                 $objectUpdate->state = 21;
                 
                 Mail::send('emails.recovery', ['empresa' => 'Jose Daniel Rodriguez', 'url' => 'https://www.JoseDanielRodriguez.com', 'password' => $pass, 'username' => $objectUpdate->username, 'email' => $objectUpdate->email, 'name' => $objectUpdate->nombres.' '.$objectUpdate->apellidos,], function (Message $message) use ($objectUpdate){
-                    $message->from('jdanielr61@gmail.com', 'Info Jose Daniel Rodriguez')
-                            ->sender('jdanielr61@gmail.com', 'Info Jose Daniel Rodriguez')
+                    $message->from('noreplay@gallo.com.gt', 'Festival de Independencia Gallo')
+                            ->sender('noreplay@gallo.com.gt', 'Festival de Independencia Gallo')
                             ->to($objectUpdate->email, $objectUpdate->nombres.' '.$objectUpdate->apellidos)
-                            ->replyTo('jdanielr61@gmail.com', 'Info JoseDanielRodriguez')
+                            ->replyTo('noreplay@gallo.com.gt', 'Festival de Independencia Gallo')
                             ->subject('Contraseña Reestablecida');
                 
                 });
