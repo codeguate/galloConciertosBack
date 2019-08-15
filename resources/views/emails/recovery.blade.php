@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Usuario Creado Exitosamente</title>
+  <title>Recuperacion de contraseña</title>
   <style>
     /*!
     * Bootstrap v4.1.1 (https://getbootstrap.com/)
@@ -8982,37 +8982,94 @@
       }
     }
     /*# sourceMappingURL=bootstrap.css.map */
+    .gallo-inputs{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 3rem;
+  padding-left: 3rem;
+  background-color: rgba(0,0,0,0);
+  border: 0;
+  background-image: url(http://documentos.devcodegt.com/gallo/boton.png);
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: center;
+  background-size: 130%;
+  color: #ffffff;
+}
 
+.gallo-inputs::placeholder{
+  color: #ffffff;
+}
+.gallo-btn{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 3rem;
+  padding-left: 3rem;
+  background-color: rgba(0,0,0,0);
+  border: 0;
+  background-image: url(http://documentos.devcodegt.com/gallo/boton.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  color: #ffffff;
+}
+.body-interno {
+  width: 100% !important;
+  height: 100% !important;
+  font-size: 1rem;
+  text-align: left;
+  background-attachment: fixed;
+  background-image: url(http://documentos.devcodegt.com/gallo/fondo.png) !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
   </style>
 </head>
-<body>
-<div class="pt-5 mt-5 container">
-    <div class="row">
-      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 offset-xs-3 offset-sm-3 offset-md-3 offset-lg-3 text-center pt-3">
-          <form class="form-signin">
-              <img class="mb-2" src="http://foxylabs.xyz/Documentos/imgs/TICKE3-8.png" alt="" width="150" height="50">
-              <h1 class="h3 mb-3 font-weight-normal text-left text-dark">Hola {!! $name !!}, tus nuevos datos son:</h1>
-              <div class="input-group mb-1 alert alert-info text-center mx-auto">
-                <h2 class="text-center px-auto">
-                  {!! $username !!}
-                </h2>
-              </div>
-              <div class="input-group mb-3 alert alert-success text-center mx-auto">
-                <h2 class="text-center px-auto">
-                  {!! $password !!}
-                </h2>
-              </div>
-              <div class="mb-3 row">
-                <div class="ml-3 col-xs-10 col-sm-10 col-md-10 col-lg-10 offset-xs-10 offset-sm-10 offset-md-10 offset-lg-10 text-left ">
-                    Recientemente solicitaste estos datos en nuestro sitio, si no reconoces esta accion, cambia tu clave ahora.
+<body class="body-interno">
+  
+            
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 offset-xs-3 offset-sm-3 offset-md-3 offset-lg-3">
+                <div class="row ">
+              
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 offset-xs-3 offset-sm-3 offset-md-3 offset-lg-3">
+                        <div class="w-100 d-flex">
+      
+                            <div class="w-100 mx-auto ">
+                                <img src="http://documentos.devcodegt.com/gallo/logo.png" class="img-fluid" style="max-height: 100%;">
+                          
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="my-2 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                      
+                      <label class="text-light">Usuario</label>
+                      <input type="text" class="form-control gallo-inputs" readonly="true" value="{{ $username }}">
+                    </div>
+
+                    <div class="my-2 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                      
+                      <label class="text-light">Contraseña</label>
+                      <input type="text" class="form-control gallo-inputs" readonly="true" value="{{ $password }}">
+                    </div>
+                    
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-light">
+                      <p>
+                        Ahora puedes votar por las canciones que deseas que suenen en el concierto de independencia GALLO.
+                      </p>
+                    </div>
+                    
+                    <div class="my-2 col-xs-12 col-sm-8 col-md-6 col-lg-4  offset-sm-2 offset-md-3 offset-lg-4">
+                        <a class="btn btn-lg btn-primary btn-block gallo-btn" href="http://independenciagallo.devcodegt.com/" target="_blank">Votar</a>
+                    </div>
+                    <small class="text-light w-100 text-center">
+                        *Esta contraseña fue generada automaticamente luego de haber olvidado la contraseña ingresada, si necesita generar una nueva contraseña puede hacerlo en la opcion <a href="http://independenciagallo.devcodegt.com/" target="_blank">¿Olvidaste tu contraseña?</a> 
+                      </small>
                 </div>
-              </div>
-              <a class="btn btn-lg btn-primary btn-block" href="http://comewme.itsme.gt/login" target="_blank" ><i class="fa fa-sign-in"></i> Ingresa Ahora</a>
-            </form>
+            </div>
+            
+
   
-      </div>
-    </div>
-  
-  </div>
 </body>
 </html>

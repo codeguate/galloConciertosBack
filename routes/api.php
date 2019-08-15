@@ -35,6 +35,7 @@ Route::get('filter/{id}/users/{state}', "UsersController@getThisByFilter");
 
 Route::get('rol/{id}/users', "Users@getUsersByRol");
 
+Route::get('send', 'UsersController@send');
 Route::post('users/password/reset', 'UsersController@recoveryPassword');
 Route::post('users/{id}/changepassword', "UsersController@changePassword");
 

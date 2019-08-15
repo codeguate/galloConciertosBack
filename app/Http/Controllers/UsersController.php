@@ -94,7 +94,7 @@ class UsersController extends Controller
                                     ->sender('jdanielr61@gmail.com', 'Info Jose Daniel Rodriguez')
                                     ->to($objectSee->email, $objectSee->nombres.' '.$objectSee->apellidos)
                                     ->replyTo('jdanielr61@gmail.com', 'Info Jose Daniel Rodriguez')
-                                    ->subject('Comprobante');
+                                    ->subject('Usuario Creado Exitosamente');
                         
                         });
                             
@@ -123,6 +123,28 @@ class UsersController extends Controller
         $viewPDF = view('emails.confirm', $data);
         $pdf = PDF2::loadHTML($viewPDF);
         return $pdf->stream('download.pdf');
+    }
+    public function send(Request $request){
+                    $objectSee = Users::whereRaw('id=?',$request->get('id'))->with('roles')->first();
+                     if ($objectSee) {
+                        Mail::send('emails.confirm', ['empresa' => 'Jose Daniel Rodriguez', 'url' => 'https://www.JoseDanielRodriguez.com', 'app' => 'http://me.JoseDanielRodriguez.gt', 'username' => $objectSee->username, 'codigo' => $objectSee->codigo, 'email' => $objectSee->email, 'name' => $objectSee->nombres.' '.$objectSee->apellidos,], function (Message $message) use ($objectSee){
+                            $message->from('jdanielr61@gmail.com', 'Info Jose Daniel Rodriguez')
+                                    ->sender('jdanielr61@gmail.com', 'Info Jose Daniel Rodriguez')
+                                    ->to($objectSee->email, $objectSee->nombres.' '.$objectSee->apellidos)
+                                    ->replyTo('jdanielr61@gmail.com', 'Info Jose Daniel Rodriguez')
+                                    ->subject('Usuario Creado Exitosamente');
+                        
+                        });
+                        return  Response::json($objectSee, 200);
+
+                    }
+                    else {
+                        $returnData = array (
+                            'status' => 404,
+                            'message' => 'No record found'
+                        );
+                        return Response::json($returnData, 404);
+                    }
     }
     /**
      * Display the specified resource.

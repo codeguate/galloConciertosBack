@@ -8982,18 +8982,94 @@
       }
     }
     /*# sourceMappingURL=bootstrap.css.map */
+    .gallo-inputs{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 3rem;
+  padding-left: 3rem;
+  background-color: rgba(0,0,0,0);
+  border: 0;
+  background-image: url(http://documentos.devcodegt.com/gallo/boton.png);
+  background-repeat: no-repeat;
+  background-position-x: right;
+  background-position-y: center;
+  background-size: 130%;
+  color: #ffffff;
+}
 
+.gallo-inputs::placeholder{
+  color: #ffffff;
+}
+.gallo-btn{
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-right: 3rem;
+  padding-left: 3rem;
+  background-color: rgba(0,0,0,0);
+  border: 0;
+  background-image: url(http://documentos.devcodegt.com/gallo/boton.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  color: #ffffff;
+}
+.body-interno {
+  width: 100% !important;
+  height: 100% !important;
+  font-size: 1rem;
+  text-align: left;
+  background-attachment: fixed;
+  background-image: url(http://documentos.devcodegt.com/gallo/fondo.png) !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
   </style>
 </head>
-<body>
-<div class="">
-    <div style="position: absolute; margin-top:60%; margin-left:176px;">
-      {!! QrCode::size(150)->generate($codigo) !!}
+<body class="body-interno">
+  
+            
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 offset-xs-3 offset-sm-3 offset-md-3 offset-lg-3">
+                <div class="row ">
+              
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 offset-xs-3 offset-sm-3 offset-md-3 offset-lg-3">
+                        <div class="w-100 d-flex">
+      
+                            <div class="w-100 mx-auto ">
+                                <img src="http://documentos.devcodegt.com/gallo/logo.png" class="img-fluid" style="max-height: 100%;">
+                          
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="my-2 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                      
+                      <label class="text-light">Usuario</label>
+                      <input type="text" class="form-control gallo-inputs" readonly="true" value="{{ $username }}">
+                    </div>
 
-    </div>
-    <img src="http://backend.josedanielrodriguez.com/Notificacion_CODE.png" style="height: 100%;" alt="">
-    
+                    <div class="my-2 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                      
+                      <label class="text-light">Contraseña</label>
+                      <input type="text" class="form-control gallo-inputs" readonly="true" value="************">
+                    </div>
+                    
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-light">
+                      <p>
+                        Ahora puedes votar por las canciones que deseas que suenen en el concierto de independencia GALLO.
+                      </p>
+                    </div>
+                    
+                    <div class="my-2 col-xs-12 col-sm-8 col-md-6 col-lg-4  offset-sm-2 offset-md-3 offset-lg-4">
+                        <a class="btn btn-lg btn-primary btn-block gallo-btn" href="http://independenciagallo.devcodegt.com/" target="_blank">Votar</a>
+                    </div>
+                    <small class="text-light w-100 text-center">
+                        *la contraseña fue previamente definido en el registro, si no recuerda que contraseña uso puede seleccionar la opcion <a href="http://independenciagallo.devcodegt.com/" target="_blank">¿Olvidaste tu contraseña?</a> 
+                      </small>
+                </div>
+            </div>
+            
 
-  </div>
+  
 </body>
 </html>
