@@ -4,9 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use App\Users;
+use App\Canciones;
 use App\CancionesVotacion;
 use Response;
 use Validator;
+use DB;
 class CancionesVotacionController extends Controller
 {
     /**
@@ -103,6 +106,73 @@ class CancionesVotacionController extends Controller
                     'status' => 500,
                     'message' => $e->getMessage()
                 );
+                return Response::json($returnData, 500);
+            }
+        }
+    }
+
+    public function votar(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'banda'          => 'required',
+            'usuario'          => 'required',
+            'votos'          => 'required',
+        ]);
+        if ( $validator->fails() ) {
+            $returnData = array (
+                'status' => 400,
+                'message' => 'Invalid Parameters',
+                'validator' => $validator
+            );
+            return Response::json($returnData, 400);
+        }
+        else {
+            DB::beginTransaction();
+            try {
+                foreach ($request->get('votos') as $key => $value) {
+                    $objectSee = Canciones::whereRaw("banda=? and titulo=?",[$request->get('banda'),$value])->first();
+                    if ($objectSee) {
+                        $newObject = new CancionesVotacion();
+                        $newObject->banda            = $objectSee->banda;
+                        $newObject->cancion            = $objectSee->id;
+                        $newObject->titulo            = $objectSee->titulo;
+                        $newObject->usuario            = $request->get('usuario');
+                        $newObject->save();
+                    }
+                    else {
+                        $returnData = array (
+                            'status' => 404,
+                            'message' => 'No record found'
+                        );
+                        DB::rollback();
+                        return Response::json($returnData, 404);
+                    }
+
+                }
+                $objectSee = Users::whereRaw("id=?",[$request->get('usuario')])->with('votos')->first();
+                if ($objectSee) {
+                    
+                    DB::commit();
+                    
+                    return Response::json($objectSee, 200);
+                
+                }
+                else {
+                    $returnData = array (
+                        'status' => 404,
+                        'message' => 'No record found'
+                    );
+                    DB::rollback();
+                    return Response::json($returnData, 404);
+                }
+                
+    
+            } catch (Exception $e) {
+                $returnData = array (
+                    'status' => 500,
+                    'message' => $e->getMessage()
+                );
+                DB::rollback();
                 return Response::json($returnData, 500);
             }
         }

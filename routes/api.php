@@ -38,6 +38,7 @@ Route::get('rol/{id}/users', "Users@getUsersByRol");
 Route::post('users/password/reset', 'UsersController@recoveryPassword');
 Route::post('users/{id}/changepassword', "UsersController@changePassword");
 
+Route::post('votar', 'CancionesVotacionController@votar');
 Route::post('login', 'AuthenticateController@login');
 Route::post('upload', 'AuthenticateController@uploadAvatar');
 
