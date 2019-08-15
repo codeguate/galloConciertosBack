@@ -57,7 +57,7 @@ class EventosSeeder extends Seeder
             'descripcion'         => "37ATQx0FHilwEs303kbplC",
             'foto1'          => "http://documentos.devcodegt.com/gallo/artistas/viernes-verde.png",
             'foto2'       => "",
-            'logo'       => "http://documentos.devcodegt.com/gallo/viento-contra.png",
+            'logo'       => "",
             'state'             => 1,
             'created_at'        => date('Y-m-d H:m:s'),
             'updated_at'        => date('Y-m-d H:m:s')
@@ -70,7 +70,7 @@ class EventosSeeder extends Seeder
             'descripcion'         => "4rDoDo039ieQ0DP7F2tKGk",
             'foto1'          => "http://documentos.devcodegt.com/gallo/artistas/viento-en-contra.png",
             'foto2'       => "",
-            'logo'       => "http://documentos.devcodegt.com/gallo/viernes-verde.png",
+            'logo'       => "http://documentos.devcodegt.com/gallo/viento-contra.png",
             'state'             => 1,
             'created_at'        => date('Y-m-d H:m:s'),
             'updated_at'        => date('Y-m-d H:m:s')
