@@ -8,9 +8,9 @@
         <h2 style="font-size: 4vh;">Nombre: <span id="name-email"> {{ $username }} </span></h2>
         <h3 style="font-size: 4vh;">Contrase&ntilde;a: <span id="password-email">********</span></h3>
         <div style="text-align:center;width:100%;font-size: 2vh;">
-
+          <a href="http://independenciagallo.devcodegt.com/" target="_blank">
           <img src="http://documentos.devcodegt.com/gallo/letras-gif.gif" style="height: 20vh; width:auto;margin-left: auto;margin-right: auto;">
-
+        </a>
         </div>
       </div>
     </div>
