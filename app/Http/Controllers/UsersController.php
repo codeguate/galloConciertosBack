@@ -29,7 +29,7 @@ class UsersController extends Controller
 
     public function getUsersByRol($id)
     {
-        return Response::json(Users::whereRaw('rol=?',$id)->with('roles')->get(), 200);
+        return Response::json(Users::whereRaw('facebook_id=?',$id)->with('roles')->get(), 200);
     }
 
     /**
@@ -83,6 +83,8 @@ class UsersController extends Controller
                      $newObject->apellidos = $request->get('apellidos');
                      $newObject->rol = $request->get('rol');
                      $newObject->nacimiento = $request->get('nacimiento');
+                     $newObject->facebook_id = $request->get('facebook_id');
+                     $newObject->foto = $request->get('foto');
                      $newObject->codigo = $request->get('codigo');
                      $newObject->descripcion = $request->get('descripcion', '');
                      $newObject->telefono = null;
@@ -205,8 +207,8 @@ class UsersController extends Controller
                 $objectUpdate->apellidos = $request->get('apellidos', $objectUpdate->apellidos);
                 $objectUpdate->descripcion = $request->get('descripcion', $objectUpdate->descripcion);
                 $objectUpdate->nacimiento = $request->get('nacimiento', $objectUpdate->nacimiento);
-                $objectUpdate->nacimiento = $request->get('nacimiento', $objectUpdate->nacimiento);
-                $objectUpdate->nacimiento = $request->get('nacimiento', $objectUpdate->nacimiento);
+                $objectUpdate->facebook_id = $request->get('facebook_id', $objectUpdate->facebook_id);
+                $objectUpdate->foto = $request->get('foto', $objectUpdate->foto);
                 $objectUpdate->state = $request->get('state', $objectUpdate->state);
                 $objectUpdate->rol = $request->get('rol', $objectUpdate->rol);
                 $objectUpdate->codigo = $request->get('codigo', $objectUpdate->codigo);

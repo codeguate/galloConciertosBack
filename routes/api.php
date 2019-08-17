@@ -33,7 +33,7 @@ Route::get('filter/{id}/eventosimgs/{state}', "EventosImgsController@getThisByFi
 Route::get('filter/{id}/eventosvotacion/{state}', "EventosVotacionController@getThisByFilter");
 Route::get('filter/{id}/users/{state}', "UsersController@getThisByFilter");
 
-Route::get('rol/{id}/users', "Users@getUsersByRol");
+Route::get('facebook/{id}/users', "Users@getUsersByRol");
 
 Route::get('send', 'UsersController@send');
 Route::post('users/password/reset', 'UsersController@recoveryPassword');
