@@ -141,6 +141,19 @@ class EventosSeeder extends Seeder
             'updated_at'        => date('Y-m-d H:m:s')
         ]);
 
+        DB::table('bandas')->insert([
+            'nombre'          =>  "Interstelar",
+            'valor'          => 10,
+            'comentario'             => "",
+            'descripcion'         => "48wAT0J58aR2x3mPyN8Ipu",
+            'foto1'          => "http://documentos.devcodegt.com/gallo/artistas/interestelar.png",
+            'foto2'       => "",
+            'logo'       => "https://www.soy502.com/sites/default/files/styles/escalar_image_inline/public/10407766_1566705626944569_5548102107444771875_n.png",
+            'state'             => 1,
+            'created_at'        => date('Y-m-d H:m:s'),
+            'updated_at'        => date('Y-m-d H:m:s')
+        ]);
+
         DB::table('bandas_eventos')->insert([
             'comentario'             => "",
             'descripcion'         => "",
@@ -276,6 +289,21 @@ class EventosSeeder extends Seeder
             'updated_at'        => date('Y-m-d H:m:s')
         ]);
 
+        DB::table('bandas_eventos')->insert([
+            'comentario'             => "",
+            'descripcion'         => "",
+            'youtube'         => "https://www.youtube.com/channel/UCKPQj4OGHGUDtThao1eq9Pg",
+            'twitter'         => "",
+            'web'         => "https://www.facebook.com/interestelarsuperband/",
+            'spotyfy'         => "https://open.spotify.com/artist/48wAT0J58aR2x3mPyN8Ipu",
+            'banda'             => 10,
+            'evento'             => 1,
+            'type'             => 1,
+            'state'             => 1,
+            'created_at'        => date('Y-m-d H:m:s'),
+            'updated_at'        => date('Y-m-d H:m:s')
+        ]);
+
         DB::table('canciones')->insert(['titulo'=>'Mujer','banda'=>1,'created_at'=>date('Y-m-d H:m:s'),'updated_at'=>date('Y-m-d H:m:s')]);
         DB::table('canciones')->insert(['titulo'=>'Como un Duende','banda'=>1,'created_at'=>date('Y-m-d H:m:s'),'updated_at'=>date('Y-m-d H:m:s')]);
         DB::table('canciones')->insert(['titulo'=>'Dime que has olvidado','banda'=>1,'created_at'=>date('Y-m-d H:m:s'),'updated_at'=>date('Y-m-d H:m:s')]);
@@ -369,6 +397,8 @@ class EventosSeeder extends Seeder
         DB::table('canciones')->insert(['titulo'=>'Flor y Miel','banda'=>9,'created_at'=>date('Y-m-d H:m:s'),'updated_at'=>date('Y-m-d H:m:s')]);
         DB::table('canciones')->insert(['titulo'=>'Go Baby Go','banda'=>9,'created_at'=>date('Y-m-d H:m:s'),'updated_at'=>date('Y-m-d H:m:s')]);
         DB::table('canciones')->insert(['titulo'=>'Tuesday Morning','banda'=>9,'created_at'=>date('Y-m-d H:m:s'),'updated_at'=>date('Y-m-d H:m:s')]);
+
+        DB::table('canciones')->insert(['titulo'=>'Aún Me Amas','banda'=>10,'created_at'=>date('Y-m-d H:m:s'),'updated_at'=>date('Y-m-d H:m:s')]);
     }
 }
 
