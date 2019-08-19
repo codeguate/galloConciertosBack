@@ -74,7 +74,7 @@ class UsersController extends Controller
              $email_exists  = Users::whereRaw("email = ?", $email)->count();
              $user = $request->get('username');
              $user_exists  = Users::whereRaw("username = ?", $user)->count();
-             if($email_exists == 0 && $user_exists == 0){    
+             if($email_exists == 0){    
                      $newObject = new Users();
                      $newObject->username = $request->get('username');
                      $newObject->password = Hash::make($request->get('password'));
