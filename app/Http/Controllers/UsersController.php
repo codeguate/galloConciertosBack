@@ -29,7 +29,7 @@ class UsersController extends Controller
 
     public function getUsersByRol($id)
     {
-        return Response::json(Users::whereRaw('facebook_id=?',$id)->with('roles')->get(), 200);
+        return Response::json(Users::whereRaw('facebook_id=?',[$id])->with('roles')->first(), 200);
     }
 
     /**
