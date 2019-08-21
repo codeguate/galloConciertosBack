@@ -122,7 +122,7 @@ class EventosSeeder extends Seeder
             'descripcion'         => "3I8kDjDkai5LpJC7gqzTa3",
             'foto1'          => "https://somosinflumedia.com/gallo/backend/public/png/artistas/dj-pako-rodriguez.png",
             'foto2'       => "",
-            'logo'       => "https://i1.sndcdn.com/avatars-000265929333-k3yb47-t500x500.jpg",
+            'logo'       => "https://somosinflumedia.com/gallo/backend/public/png/dj-pako-rodriguez.png",
             'state'             => 1,
             'created_at'        => date('Y-m-d H:m:s'),
             'updated_at'        => date('Y-m-d H:m:s')
