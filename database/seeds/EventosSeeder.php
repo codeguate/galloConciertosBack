@@ -83,7 +83,7 @@ class EventosSeeder extends Seeder
             'descripcion'         => "5fwK7ENG6aLoNLdYskJLzQ",
             'foto1'          => "https://somosinflumedia.com/gallo/backend/public/png/artistas/el-tambor-de-la-tribu.png",
             'foto2'       => "",
-            'logo'       => "https://somosinflumedia.com/gallo/backend/public/png/tambor.jpg",
+            'logo'       => "https://somosinflumedia.com/gallo/backend/public/png/tambor.png",
             'state'             => 1,
             'created_at'        => date('Y-m-d H:m:s'),
             'updated_at'        => date('Y-m-d H:m:s')
@@ -109,7 +109,7 @@ class EventosSeeder extends Seeder
             'descripcion'         => "0Vh0ArsYBxSu91IrDKHnMf",
             'foto1'          => "https://somosinflumedia.com/gallo/backend/public/png/artistas/pedro-cuevas.png",
             'foto2'       => "",
-            'logo'       => "https://somosinflumedia.com/gallo/backend/public/png/pedrocuevas.jpg",
+            'logo'       => "https://somosinflumedia.com/gallo/backend/public/png/pedrocuevas.png",
             'state'             => 1,
             'created_at'        => date('Y-m-d H:m:s'),
             'updated_at'        => date('Y-m-d H:m:s')
@@ -135,7 +135,7 @@ class EventosSeeder extends Seeder
             'descripcion'         => "6dZUANURWmN0HyHCjkDZKi",
             'foto1'          => "https://somosinflumedia.com/gallo/backend/public/png/artistas/tijuana-love.png",
             'foto2'       => "",
-            'logo'       => "https://somosinflumedia.com/gallo/backend/public/png/tijuanaLove.jpg",
+            'logo'       => "https://somosinflumedia.com/gallo/backend/public/png/tijuanaLove.png",
             'state'             => 1,
             'created_at'        => date('Y-m-d H:m:s'),
             'updated_at'        => date('Y-m-d H:m:s')
