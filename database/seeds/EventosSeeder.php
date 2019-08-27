@@ -31,7 +31,7 @@ class EventosSeeder extends Seeder
             'descripcion'         => "2i5W78vjs3RRZlQiL1RwP6",
             'foto1'          => "https://somosinflumedia.com/gallo/backend/public/png/artistas/alux-nahual.png",
             'foto2'       => "",
-            'logo'       => "https://somosinflumedia.com/gallo/backend/public/png/alux.png",
+            'logo'       => "https://somosinflumedia.com/gallo/backend/public/png/alux-min.png",
             'state'             => 1,
             'created_at'        => date('Y-m-d H:m:s'),
             'updated_at'        => date('Y-m-d H:m:s')
@@ -44,7 +44,7 @@ class EventosSeeder extends Seeder
             'descripcion'         => "7IfawGrEmlHmBW9gqTUd8E",
             'foto1'          => "https://somosinflumedia.com/gallo/backend/public/png/artistas/bohemia.png",
             'foto2'       => "",
-            'logo'       => "https://somosinflumedia.com/gallo/backend/public/png/BohemiaSuburbana.png",
+            'logo'       => "https://somosinflumedia.com/gallo/backend/public/png/BohemiaSuburbana-min.png",
             'state'             => 1,
             'created_at'        => date('Y-m-d H:m:s'),
             'updated_at'        => date('Y-m-d H:m:s')
@@ -57,7 +57,7 @@ class EventosSeeder extends Seeder
             'descripcion'         => "37ATQx0FHilwEs303kbplC",
             'foto1'          => "https://somosinflumedia.com/gallo/backend/public/png/artistas/viernes-verde.png",
             'foto2'       => "",
-            'logo'       => "https://somosinflumedia.com/gallo/backend/public/png/viernes-verde.png",
+            'logo'       => "https://somosinflumedia.com/gallo/backend/public/png/viernes-verde-min.png",
             'state'             => 1,
             'created_at'        => date('Y-m-d H:m:s'),
             'updated_at'        => date('Y-m-d H:m:s')
@@ -70,7 +70,7 @@ class EventosSeeder extends Seeder
             'descripcion'         => "4rDoDo039ieQ0DP7F2tKGk",
             'foto1'          => "https://somosinflumedia.com/gallo/backend/public/png/artistas/viento-en-contra.png",
             'foto2'       => "",
-            'logo'       => "https://somosinflumedia.com/gallo/backend/public/png/viento-contra.png",
+            'logo'       => "https://somosinflumedia.com/gallo/backend/public/png/viento-contra-min.png",
             'state'             => 1,
             'created_at'        => date('Y-m-d H:m:s'),
             'updated_at'        => date('Y-m-d H:m:s')
@@ -83,7 +83,7 @@ class EventosSeeder extends Seeder
             'descripcion'         => "5fwK7ENG6aLoNLdYskJLzQ",
             'foto1'          => "https://somosinflumedia.com/gallo/backend/public/png/artistas/el-tambor-de-la-tribu.png",
             'foto2'       => "",
-            'logo'       => "https://somosinflumedia.com/gallo/backend/public/png/tambor.png",
+            'logo'       => "https://somosinflumedia.com/gallo/backend/public/png/tambor-min.png",
             'state'             => 1,
             'created_at'        => date('Y-m-d H:m:s'),
             'updated_at'        => date('Y-m-d H:m:s')
@@ -96,7 +96,7 @@ class EventosSeeder extends Seeder
             'descripcion'         => "5MQIG4BAfEDvpdkOI9pDWw",
             'foto1'          => "https://somosinflumedia.com/gallo/backend/public/png/artistas/elclubo.png",
             'foto2'       => "",
-            'logo'       => "https://somosinflumedia.com/gallo/backend/public/png/el-clubo.png",
+            'logo'       => "https://somosinflumedia.com/gallo/backend/public/png/el-clubo-min.png",
             'state'             => 1,
             'created_at'        => date('Y-m-d H:m:s'),
             'updated_at'        => date('Y-m-d H:m:s')
@@ -109,7 +109,7 @@ class EventosSeeder extends Seeder
             'descripcion'         => "0Vh0ArsYBxSu91IrDKHnMf",
             'foto1'          => "https://somosinflumedia.com/gallo/backend/public/png/artistas/pedro-cuevas.png",
             'foto2'       => "",
-            'logo'       => "https://somosinflumedia.com/gallo/backend/public/png/pedrocuevas.png",
+            'logo'       => "https://somosinflumedia.com/gallo/backend/public/png/pedrocuevas-min.png",
             'state'             => 1,
             'created_at'        => date('Y-m-d H:m:s'),
             'updated_at'        => date('Y-m-d H:m:s')
@@ -122,7 +122,7 @@ class EventosSeeder extends Seeder
             'descripcion'         => "3I8kDjDkai5LpJC7gqzTa3",
             'foto1'          => "https://somosinflumedia.com/gallo/backend/public/png/artistas/dj-pako-rodriguez.png",
             'foto2'       => "",
-            'logo'       => "https://somosinflumedia.com/gallo/backend/public/png/dj-pako-rodriguez.png",
+            'logo'       => "https://somosinflumedia.com/gallo/backend/public/png/dj-pako-rodriguez-min.png",
             'state'             => 1,
             'created_at'        => date('Y-m-d H:m:s'),
             'updated_at'        => date('Y-m-d H:m:s')
@@ -135,7 +135,7 @@ class EventosSeeder extends Seeder
             'descripcion'         => "6dZUANURWmN0HyHCjkDZKi",
             'foto1'          => "https://somosinflumedia.com/gallo/backend/public/png/artistas/tijuana-love.png",
             'foto2'       => "",
-            'logo'       => "https://somosinflumedia.com/gallo/backend/public/png/tijuanaLove.png",
+            'logo'       => "https://somosinflumedia.com/gallo/backend/public/png/tijuanaLove-min.png",
             'state'             => 1,
             'created_at'        => date('Y-m-d H:m:s'),
             'updated_at'        => date('Y-m-d H:m:s')
