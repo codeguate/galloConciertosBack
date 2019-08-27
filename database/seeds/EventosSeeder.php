@@ -31,7 +31,7 @@ class EventosSeeder extends Seeder
             'descripcion'         => "2i5W78vjs3RRZlQiL1RwP6",
             'foto1'          => "https://somosinflumedia.com/gallo/backend/public/png/artistas/alux-nahual.png",
             'foto2'       => "",
-            'logo'       => "https://pbs.twimg.com/profile_images/1099415601913700352/j2QnoEGh.jpg",
+            'logo'       => "https://somosinflumedia.com/gallo/backend/public/png/alux.png",
             'state'             => 1,
             'created_at'        => date('Y-m-d H:m:s'),
             'updated_at'        => date('Y-m-d H:m:s')
@@ -44,7 +44,7 @@ class EventosSeeder extends Seeder
             'descripcion'         => "7IfawGrEmlHmBW9gqTUd8E",
             'foto1'          => "https://somosinflumedia.com/gallo/backend/public/png/artistas/bohemia.png",
             'foto2'       => "",
-            'logo'       => "https://somosinflumedia.com/gallo/backend/public/png/BohemiaSuburbana.jpg",
+            'logo'       => "https://somosinflumedia.com/gallo/backend/public/png/BohemiaSuburbana.png",
             'state'             => 1,
             'created_at'        => date('Y-m-d H:m:s'),
             'updated_at'        => date('Y-m-d H:m:s')
@@ -83,7 +83,7 @@ class EventosSeeder extends Seeder
             'descripcion'         => "5fwK7ENG6aLoNLdYskJLzQ",
             'foto1'          => "https://somosinflumedia.com/gallo/backend/public/png/artistas/el-tambor-de-la-tribu.png",
             'foto2'       => "",
-            'logo'       => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCoLAwSFj1NSsq75nZimMs0ii09EytbMn5oCwU3oJwt9FMseuD",
+            'logo'       => "https://somosinflumedia.com/gallo/backend/public/png/tambor.jpg",
             'state'             => 1,
             'created_at'        => date('Y-m-d H:m:s'),
             'updated_at'        => date('Y-m-d H:m:s')
@@ -135,7 +135,7 @@ class EventosSeeder extends Seeder
             'descripcion'         => "6dZUANURWmN0HyHCjkDZKi",
             'foto1'          => "https://somosinflumedia.com/gallo/backend/public/png/artistas/tijuana-love.png",
             'foto2'       => "",
-            'logo'       => "https://photos.bandsintown.com/thumb/8446872.jpeg",
+            'logo'       => "https://somosinflumedia.com/gallo/backend/public/png/tijuanaLove.jpg",
             'state'             => 1,
             'created_at'        => date('Y-m-d H:m:s'),
             'updated_at'        => date('Y-m-d H:m:s')
