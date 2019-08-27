@@ -140,12 +140,12 @@ class CancionesVotacionController extends Controller
                         $newObject->save();
                     }
                     else {
-                        $returnData = array (
-                            'status' => 404,
-                            'message' => 'No record found'
-                        );
-                        DB::rollback();
-                        return Response::json($returnData, 404);
+                        $newObject = new CancionesVotacion();
+                        $newObject->banda            = $request->get('banda');
+                        $newObject->cancion            = null;
+                        $newObject->titulo            = $value;
+                        $newObject->usuario            = $request->get('usuario');
+                        $newObject->save();
                     }
 
                 }
